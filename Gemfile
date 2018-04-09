@@ -67,3 +67,8 @@ gem 'rails_12factor', group: :production
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+
+gem 'activeadmin', github: 'activeadmin'
+
+gem 'rb-readline'
+

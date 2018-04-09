@@ -17,4 +17,12 @@ class ApplicationController < ActionController::Base
     options.merge(locale: locale)
   end
 
+  def authenticate_admin_user!
+    authenticate_user!
+    unless current_user.admin?
+      flash[:alert] = "This area is restricted to administrators only."
+      redirect_to root_path
+    end
+  end
+
 end

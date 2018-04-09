@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_one :past_medical_history, dependent: :destroy
   has_one :symptom, dependent: :destroy
 
+  enum role: {normal: 0, admin: 1, staff: 2, guest: 3}
+
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.find_by(provider: auth.provider, uid: auth.uid)
 
